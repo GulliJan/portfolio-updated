@@ -1,0 +1,240 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* -------------------------------------------------------------------------- */
+/* Design tokens — Light, fresh, teal-blue accent palette                     */
+/* -------------------------------------------------------------------------- */
+
+@layer base {
+  :root {
+    /* Page & surfaces — warm off-white with subtle tint shift */
+    --bg: 248 250 252;          /* slate-50 — main background */
+    --bg-soft: 241 245 249;     /* slate-100 — alternating sections */
+    --bg-tint: 240 253 250;     /* subtle mint/teal tint for one hero moment */
+    --surface: 255 255 255;     /* card surface */
+    --border: 226 232 240;      /* slate-200 */
+    --border-strong: 203 213 225; /* slate-300 */
+
+    /* Text */
+    --fg: 15 23 42;             /* slate-900 */
+    --muted: 71 85 105;         /* slate-600 */
+    --subtle: 148 163 184;      /* slate-400 */
+
+    /* Accent — teal → blue gradient system */
+    --accent: 14 165 180;       /* teal-500ish */
+    --accent-2: 37 99 235;      /* blue-600 */
+    --accent-soft: 204 251 241; /* teal-100 */
+    --accent-fg: 255 255 255;
+
+    /* Semantic */
+    --success: 16 185 129;      /* emerald-500 */
+    --award: 245 158 11;        /* amber-500 for awards/badges */
+  }
+
+  .dark {
+    --bg: 11 18 32;             /* deep slate navy */
+    --bg-soft: 15 23 42;        /* slate-900 */
+    --bg-tint: 8 47 73;         /* deep teal tint */
+    --surface: 20 30 48;
+    --border: 30 41 59;         /* slate-800 */
+    --border-strong: 51 65 85;  /* slate-700 */
+
+    --fg: 241 245 249;          /* slate-100 */
+    --muted: 203 213 225;       /* slate-300 */
+    --subtle: 148 163 184;      /* slate-400 */
+
+    --accent: 45 212 191;       /* teal-400 — brighter for dark */
+    --accent-2: 96 165 250;     /* blue-400 */
+    --accent-soft: 19 78 74;
+    --accent-fg: 15 23 42;
+
+    --success: 52 211 153;
+    --award: 251 191 36;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
+
+  body {
+    @apply bg-bg text-fg font-sans antialiased;
+    font-feature-settings: 'ss01', 'cv11';
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+
+  :focus-visible {
+    outline: none;
+    box-shadow: 0 0 0 2px rgb(var(--bg)), 0 0 0 4px rgb(var(--accent));
+    border-radius: 0.375rem;
+  }
+
+  ::selection {
+    background: rgb(var(--accent) / 0.25);
+    color: rgb(var(--fg));
+  }
+
+  h1, h2, h3, h4 {
+    @apply font-serif font-medium tracking-tight;
+  }
+}
+
+/* -------------------------------------------------------------------------- */
+/* Utilities                                                                  */
+/* -------------------------------------------------------------------------- */
+
+@layer utilities {
+  .container-page {
+    @apply mx-auto w-full max-w-container px-5 sm:px-8 lg:px-12;
+  }
+
+  .section-label {
+    @apply font-mono text-xs uppercase tracking-[0.22em] text-subtle;
+  }
+
+  /* Signature gradient text — used for one headline accent per page */
+  .text-gradient {
+    background: linear-gradient(
+      120deg,
+      rgb(var(--accent)) 0%,
+      rgb(var(--accent-2)) 100%
+    );
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  /* Accent gradient background — used on CTA panels */
+  .bg-gradient-accent {
+    background: linear-gradient(
+      135deg,
+      rgb(var(--accent)) 0%,
+      rgb(var(--accent-2)) 100%
+    );
+  }
+
+  /* Subtle gradient background for sections that need lift */
+  .bg-tint {
+    background: linear-gradient(
+      180deg,
+      rgb(var(--bg)) 0%,
+      rgb(var(--bg-tint) / 0.4) 100%
+    );
+  }
+
+  /* Soft card shadow tuned for light surfaces */
+  .shadow-soft {
+    box-shadow:
+      0 1px 2px 0 rgb(15 23 42 / 0.04),
+      0 4px 12px -2px rgb(15 23 42 / 0.06);
+  }
+  .shadow-soft-lg {
+    box-shadow:
+      0 1px 2px 0 rgb(15 23 42 / 0.05),
+      0 12px 32px -8px rgb(15 23 42 / 0.12);
+  }
+  .dark .shadow-soft {
+    box-shadow:
+      0 1px 2px 0 rgb(0 0 0 / 0.4),
+      0 4px 12px -2px rgb(0 0 0 / 0.3);
+  }
+  .dark .shadow-soft-lg {
+    box-shadow:
+      0 1px 2px 0 rgb(0 0 0 / 0.4),
+      0 12px 32px -8px rgb(0 0 0 / 0.5);
+  }
+
+  /* Hero background orbs — pure CSS, no external image */
+  .hero-orbs::before,
+  .hero-orbs::after {
+    content: '';
+    position: absolute;
+    border-radius: 9999px;
+    filter: blur(80px);
+    opacity: 0.5;
+    pointer-events: none;
+    z-index: 0;
+  }
+  .hero-orbs::before {
+    width: 520px;
+    height: 520px;
+    top: -120px;
+    right: -120px;
+    background: radial-gradient(circle, rgb(var(--accent) / 0.35), transparent 70%);
+  }
+  .hero-orbs::after {
+    width: 420px;
+    height: 420px;
+    top: 200px;
+    left: -100px;
+    background: radial-gradient(circle, rgb(var(--accent-2) / 0.25), transparent 70%);
+  }
+  .dark .hero-orbs::before {
+    opacity: 0.35;
+  }
+  .dark .hero-orbs::after {
+    opacity: 0.3;
+  }
+
+  /* Grid pattern subtle overlay — for hero only */
+  .grid-fade {
+    background-image:
+      linear-gradient(to right, rgb(var(--border) / 0.4) 1px, transparent 1px),
+      linear-gradient(to bottom, rgb(var(--border) / 0.4) 1px, transparent 1px);
+    background-size: 56px 56px;
+    mask-image: radial-gradient(ellipse 70% 60% at 50% 30%, black 40%, transparent 90%);
+    -webkit-mask-image: radial-gradient(ellipse 70% 60% at 50% 30%, black 40%, transparent 90%);
+  }
+
+  /* Decorative dotted separator */
+  .dot-separator {
+    background-image: radial-gradient(circle, rgb(var(--border-strong)) 1px, transparent 1px);
+    background-size: 12px 12px;
+    background-repeat: repeat-x;
+    background-position: center;
+  }
+
+  /* -------------------------------------------------------------------- */
+  /* Motion utilities                                                     */
+  /* — Wrap a media-card image with .image-zoom so its child <img> gently */
+  /*   scales on group hover. Only active on devices that support hover.  */
+  /* — .ambient-drift is meant for purely decorative gradient backdrops;  */
+  /*   it’s gated behind motion-safe so it disappears for users who       */
+  /*   prefer reduced motion.                                             */
+  /* -------------------------------------------------------------------- */
+
+  .image-zoom > img {
+    transition: transform 600ms cubic-bezier(0.22, 1, 0.36, 1);
+    will-change: transform;
+  }
+
+  @media (hover: hover) {
+    .group:hover .image-zoom > img,
+    .image-zoom:hover > img {
+      transform: scale(1.04);
+    }
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    .ambient-drift {
+      animation: gradientDrift 12s ease-in-out infinite;
+    }
+  }
+}
