@@ -27,7 +27,7 @@ export function Hero() {
                 <span className="relative inline-flex h-2 w-2 rounded-full bg-success" />
               </span>
               <p className="text-xs font-medium text-accent tracking-wide">
-                Open to junior developer & co-op roles · {site.location}
+                Open to software developer & co-op roles · {site.location}
               </p>
             </div>
 
