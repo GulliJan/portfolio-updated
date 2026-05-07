@@ -75,7 +75,7 @@ export const leadership: LeadershipItem[] = [
     organization: 'Patient Expertise in Research Collaboration Centre (PERC), McMaster University',
     period: '2023 – Present',
     description:
-      'Contributing as a patient partner to primary healthcare research in Ontario, helping ensure studies, tools, and resources align with the real needs and experiences of patients, families, and communities. Presented PERC research at NAPCRG 2025 in Quebec City as a patient partner.',
+      'Contributing as a patient partner to primary healthcare research in Ontario, helping ensure that studies, tools, and resources reflect the real needs and experiences of patients, families, and communities. Presented PERC research at NAPCRG 2024 in Quebec City as a patient partner, and also attended Trillium in 2024 and 2025 to continue learning, connecting, and contributing to patient-oriented healthcare research.',
     category: 'Research',
     image: '/images/leadership/perc-napcrg.jpg',
     imageAlt:
