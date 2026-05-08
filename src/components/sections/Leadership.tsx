@@ -62,7 +62,7 @@ export function Leadership() {
       label="07 / Leadership & Community"
       heading={
         <>
-          Beyond the code —{' '}
+          Beyond the code {' '}
           <span className="italic text-gradient">the rooms I&apos;m in.</span>
         </>
       }

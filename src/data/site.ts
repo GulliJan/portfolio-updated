@@ -8,11 +8,11 @@ export const site = {
   email: 'gulafrozakbari1375@gmail.com',
   phone: '(905) 541-4855',
   /** Place your resume PDF at /public/resume.pdf to activate */
-  resumeUrl: '/Gul_Afroz_Akbari_Resume.docx',
+  resumeUrl: '/Gul_Afroz_Akbari_Resume.pdf',
   tagline:
     'I build full-stack web apps and computer-vision pipelines with React, TypeScript, Python, and FastAPI, always aiming for work that is accessible, well-tested, and genuinely useful.',
   summary: `Computer Systems Technician graduate with hands-on experience shipping full-stack web applications, REST APIs, and computer vision pipelines. Dean's Honour List student, Agile-team collaborator, and Audience Choice Award winner at Mohawk College's Ideas to Impact 2026. Seeking software developer or co-op opportunities.`,
-  bio: `I'm a recent Computer Systems Technician graduate from Mohawk College, where I finished on the Dean's Honour List. Before switching into tech, I earned a Bachelor's in Economics and Management from Ishraq University, that background still shapes how I think about software: systems, trade-offs, and the people on the other side of the screen.
+  bio: `I am a Computer Systems Technician graduate from Mohawk College, currently pursuing advanced studies in Computer Systems Technology – Software Development. Before switching into tech, I earned a Bachelor's in Economics and Management from Ishraq University, that background still shapes how I think about software: systems, trade-offs, and the people on the other side of the screen.
 
 What I've built so far ranges from a full-stack crisis triage platform for a healthcare client to a computer-vision and OCR pipeline that reads markings off moving train wagons. I work best in Agile teams with real feedback loops and I care about the craft underneath the interface accessibility, performance, clean data shapes, and code someone else can read six months from now.
 
