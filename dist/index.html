@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#0b1220" media="(prefers-color-scheme: dark)" />
+    <meta name="theme-color" content="#f8fafc" media="(prefers-color-scheme: light)" />
+
+    <!-- SEO -->
+    <title>Gul Afroz Akbari — Full-Stack Developer</title>
+    <meta
+      name="description"
+      content="Full-stack developer based in Hamilton, ON. I build accessible web apps and computer-vision pipelines with React, TypeScript, Python, and FastAPI. Open to full stack software developer and co-op roles."
+    />
+    <meta name="author" content="Gul Afroz Akbari" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Gul Afroz Akbari — Full-Stack Developer" />
+    <meta
+      property="og:description"
+      content="Full-stack developer building accessible web apps and computer-vision pipelines. Audience Choice Award · Ideas to Impact 2026."
+    />
+
+    <!-- Prevent flash of wrong theme -->
+    <script>
+      (function () {
+        try {
+          var stored = localStorage.getItem('theme');
+          var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+          var theme = stored || (prefersDark ? 'dark' : 'light');
+          if (theme === 'dark') document.documentElement.classList.add('dark');
+        } catch (e) {}
+      })();
+    </script>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter+Tight:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <script type="module" crossorigin src="/assets/index-B65-yxYt.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-lHzDDNTO.css">
+  </head>
+  <body>
+    <div id="root"></div>
+  </body>
+</html>
