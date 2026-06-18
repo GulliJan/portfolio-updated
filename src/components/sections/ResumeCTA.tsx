@@ -39,6 +39,7 @@ export function ResumeCTA() {
                 href={site.resumeUrl}
                 variant="secondary"
                 className="!bg-white !text-accent-2 !border-transparent hover:!bg-white/95"
+                download
               >
                 <svg
                   width="16"

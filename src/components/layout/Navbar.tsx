@@ -137,8 +137,9 @@ export function Navbar() {
               size="sm"
               variant="secondary"
               className="hidden sm:inline-flex"
+              download
             >
-              Résumé
+             Résumé
             </Button>
 
             <button
@@ -176,6 +177,7 @@ export function Navbar() {
               ))}
               <a
                 href={site.resumeUrl}
+                download
                 className="mt-4 inline-flex py-3 text-sm font-mono uppercase tracking-widest text-accent animate-fade-up"
                 style={{ animationDelay: `${60 + navItems.length * 40}ms` }}
               >

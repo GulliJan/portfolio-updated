@@ -20,12 +20,13 @@ I'm currently based in Hamilton, ON and looking for software developer or co-op 
 } as const;
 
 export const navItems: NavItem[] = [
+   { label: 'Home', href: '/#contact' },
   { label: 'About', href: '/about' },
   { label: 'Skills', href: '/skills' },
   { label: 'Work', href: '/work' },
   { label: 'Experience', href: '/experience' },
   { label: 'Community', href: '/community' },
-  { label: 'Contact', href: '/#contact' },
+ 
 ];
 
 export const socials: SocialLink[] = [

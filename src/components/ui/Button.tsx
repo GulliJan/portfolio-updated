@@ -22,7 +22,6 @@ const base =
   'active:scale-[0.98] whitespace-nowrap';
 
 const variants: Record<Variant, string> = {
-  // Signature gradient — the single strongest visual moment on the page
   primary:
     'bg-gradient-accent text-white shadow-soft hover:shadow-soft-lg hover:-translate-y-0.5',
   secondary:
@@ -40,13 +39,15 @@ export function Button(props: Props) {
   const classes = cn(base, variants[variant], sizes[size], className);
 
   if ('href' in rest && rest.href !== undefined) {
-    const { href, ...anchorRest } = rest as AnchorProps;
+    const { href, download, ...anchorRest } = rest as AnchorProps;
     const isExternal = /^https?:\/\//.test(href);
+    const openInNewTab = isExternal && download === undefined;
     return (
       <a
         href={href}
         className={classes}
-        {...(isExternal && { target: '_blank', rel: 'noopener noreferrer' })}
+        {...(download !== undefined && { download })}
+        {...(openInNewTab && { target: '_blank', rel: 'noopener noreferrer' })}
         {...anchorRest}
       >
         {children}
