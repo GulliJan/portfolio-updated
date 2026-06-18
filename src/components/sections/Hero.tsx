@@ -75,7 +75,7 @@ export function Hero() {
               className="mt-8 flex flex-wrap items-center gap-3 animate-fade-up"
               style={{ animationDelay: '460ms' }}
             >
-              <Button href="#work">
+              <Button href="/work">
                 See my work
                 <span aria-hidden="true" className="ml-0.5">
                   →
